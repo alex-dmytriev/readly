@@ -12,11 +12,81 @@
 </head>
 
 <body>
-  <header class="header">
+  <header class="header" id="home-section">
   <div class="container header-container">
+    <nav class="page-nav">
+      <a href="/">
+        <svg class="icon-logo" width="83" height="21">
+          <use href="/readly/assets/icon-logo-BXrJVVOC.svg"></use>
+          <!-- <use href="/img/sprite.svg#icon-logo"></use> -->
+        </svg>
+      </a>
 
+      <ul class="page-menu">
+        <li class="page-menu-item">
+          <a class="page-menu-link" href="#home-section"></a>Home
+        </li>
+        <li class="page-menu-item">
+          <a class="page-menu-link" href="#books-section"></a>Books
+        </li>
+        <li class="page-menu-item">
+          <a class="page-menu-link" href="#feedbacks-section"></a>Feedbacks
+        </li>
+        <li class="page-menu-item">
+          <a class="page-menu-link" href="#events-section"></a>Events
+        </li>
+        <li class="page-menu-item">
+          <a class="page-menu-link" href="#location-section"></a>Location
+        </li>
+      </ul>
+    </nav>
+
+    <button class="mobile-open-menu-btn" type="button">
+      <svg class="mobile-open-menu-btn-icon" width="24" height="24">
+        <use href="/readly/assets/sprite-zwOSE8UW.svg#icon-menu-alt-right"></use>
+      </svg>
+    </button>
   </div>
 </header>
+
+<div class="mobile-menu">
+  <div class="container mobile-menu-container">
+    <a href="/">
+      <svg class="icon-logo" width="83" height="21">
+        <!-- <use href="/img/sprite.svg#icon-logo"></use> -->
+        <use href="/readly/assets/icon-logo-BXrJVVOC.svg"></use>
+      </svg>
+    </a>
+
+    <button class="mobile-menu-close-btn" type="button">
+      <svg class="mobile-menu-close-icon" width="24" height="24">
+        <use href="/readly/assets/sprite-zwOSE8UW.svg#icon-x"></use>
+      </svg>
+    </button>
+
+    <nav class="mobile-menu-nav">
+      <ul class="mobile-page-menu">
+        <li class="mobile-page-menu-item">
+          <a class="mobile-page-menu-link" href="#home-section"></a>Home
+        </li>
+        <li class="mobile-page-menu-item">
+          <a class="mobile-page-menu-link" href="#feedbacks-section"></a>Books
+        </li>
+        <li class="mobile-page-menu-item">
+          <a class="mobile-page-menu-link" href="#feedbacks-section"></a
+          >Feedbacks
+        </li>
+        <li class="mobile-page-menu-item">
+          <a class="mobile-page-menu-link" href="#events-section"></a>Events
+        </li>
+        <li class="mobile-page-menu-item">
+          <a class="mobile-page-menu-link" href="#location-section"></a>Location
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
 
   <main>
     <!-- Loads the specified .html file -->
