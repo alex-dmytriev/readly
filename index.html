@@ -225,8 +225,70 @@
 </section>
 
     <div class="container book-modal-container">
+  <!-- Модальне вікно -->
+  <div class="modal-content">
+    <img src="" alt="" class="" id="" />
 
+    <h2 class="book-title" id="bookTitle">I will find you</h2>
+    <p class="book-author" id="bookAuthor">Harlan Coben</p>
+    <p class="book-price" id="bookPrice">$15</p>
+
+    <form class="book-form" id="bookForm">
+      <div class="quantity-container">
+        <button type="button" class="quantity-btn" id="decreaseBtn">-</button>
+        <input
+          type="number"
+          class="quantity-input"
+          id="quantity"
+          value="1"
+          min="1"
+          readonly
+        />
+        <button type="button" class="quantity-btn" id="increaseBtn">+</button>
+      </div>
+
+      <button type="button" class="add-to-cart" id="addToCartBtn">
+        Add To Cart
+      </button>
+      <button type="button" class="buy-now" id="buyNowBtn">Buy Now</button>
+    </form>
+
+    <div class="accordion">
+      <div class="accordion-item">
+        <button class="accordion-header" data-target="details">Details</button>
+        <div class="accordion-content" id="details">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis non
+          obcaecati, quam iure blanditiis fuga dicta voluptates ab ipsum
+          consectetur sunt a. Fuga, tempora sint illum impedit pariatur aliquam
+          perferendis.
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header" data-target="shipping">
+          Shipping
+        </button>
+        <div class="accordion-content" id="shipping">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium
+          dolor nostrum quas delectus tempora, omnis sequi unde accusamus quae
+          laborum quo veritatis. Voluptates odit necessitatibus reprehenderit
+          dolore. Ipsa, consectetur cum!
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header" data-target="returns">Returns</button>
+        <div class="accordion-content" id="returns">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque rerum
+          adipisci modi delectus. Molestias vitae consectetur qui labore
+          nesciunt illo dolor a, repudiandae hic eos quibusdam iste doloremque
+          aliquid beatae?
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
     <div class="container feedbacks-container">
 
 </div>
