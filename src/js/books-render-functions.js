@@ -1,7 +1,4 @@
-const refs = {
-  galleryList: document.querySelector('.books-gallery-list'),
-  categoryList: document.querySelector('.books-nav-category'),
-};
+import { refs } from './refs';
 
 export const createGallery = books => {
   const galleryCardTemplate = books

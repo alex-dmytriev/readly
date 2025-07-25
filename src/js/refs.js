@@ -7,4 +7,9 @@ export const refs = {
   contactModalContainerEl: document.querySelector('.contact-modal-container'),
   bookModalContainerEl: document.querySelector('.book-modal-container'),
   footerContainerEl: document.querySelector('.footer-container'),
+
+  // ========== books
+  galleryList: document.querySelector('.books-gallery-list'),
+  categoryList: document.querySelector('.books-nav-category'),
+  // ========== /books
 };
