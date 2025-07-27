@@ -8,7 +8,7 @@
     <script type="module" crossorigin src="/readly/index.js"></script>
     <link rel="modulepreload" crossorigin href="/readly/assets/vendor-mCrKYcTL.js">
     <link rel="stylesheet" crossorigin href="/readly/assets/vendor-_qD4Mysr.css">
-    <link rel="stylesheet" crossorigin href="/readly/assets/index-WEwQ1hjG.css">
+    <link rel="stylesheet" crossorigin href="/readly/assets/index-Gq5r599G.css">
   </head>
 
   <body>
@@ -260,63 +260,144 @@
 </section>
       <div class="container book-modal-container">
   <!-- Модальне вікно -->
-  <div class="modal-content">
-    <img src="" alt="" class="" id="" />
-
-    <h2 class="book-title" id="bookTitle">I will find you</h2>
-    <p class="book-author" id="bookAuthor">Harlan Coben</p>
-    <p class="book-price" id="bookPrice">$15</p>
-
-    <form class="book-form" id="bookForm">
-      <div class="quantity-container">
-        <button type="button" class="quantity-btn" id="decreaseBtn">-</button>
-        <input
-          type="number"
-          class="quantity-input"
-          id="quantity"
-          value="1"
-          min="1"
-          readonly
-        />
-        <button type="button" class="quantity-btn" id="increaseBtn">+</button>
-      </div>
-
-      <button type="button" class="add-to-cart" id="addToCartBtn">
-        Add To Cart
-      </button>
-      <button type="button" class="buy-now" id="buyNowBtn">Buy Now</button>
-    </form>
-
-    <div class="accordion">
-      <div class="accordion-item">
-        <button class="accordion-header" data-target="details">Details</button>
-        <div class="accordion-content" id="details">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis non
-          obcaecati, quam iure blanditiis fuga dicta voluptates ab ipsum
-          consectetur sunt a. Fuga, tempora sint illum impedit pariatur aliquam
-          perferendis.
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <button class="accordion-header" data-target="shipping">
-          Shipping
+  <div class="book-modal-overlay" id="modalOverlay">
+    <div class="book-modal">
+      <div class="book-modal-header">
+        <button class="book-modal-close" id="closeModalBtn">
+          <svg class="icon icon-close" width="32" height="32">
+            <use href="/readly/assets/sprite-zwOSE8UW.svg#icon-x"></use>
+          </svg>
         </button>
-        <div class="accordion-content" id="shipping">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium
-          dolor nostrum quas delectus tempora, omnis sequi unde accusamus quae
-          laborum quo veritatis. Voluptates odit necessitatibus reprehenderit
-          dolore. Ipsa, consectetur cum!
-        </div>
       </div>
+      <div class="book-modal-content">
+        <div class="book-modal-image-column">
+          <img class="book-modal-cover" src="" alt="" id="" />
+        </div>
 
-      <div class="accordion-item">
-        <button class="accordion-header" data-target="returns">Returns</button>
-        <div class="accordion-content" id="returns">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque rerum
-          adipisci modi delectus. Molestias vitae consectetur qui labore
-          nesciunt illo dolor a, repudiandae hic eos quibusdam iste doloremque
-          aliquid beatae?
+        <div class="book-modal-details">
+          <h2 class="book-modal-title" id="bookTitle">I will find you</h2>
+          <p class="book-modal-author" id="bookAuthor">Harlan Coben</p>
+          <p class="book-modal-price" id="bookPrice">$15</p>
+
+          <form class="book-modal-form" id="bookForm">
+            <div class="book-modal-quantity-container">
+              <button
+                type="button"
+                class="book-modal-quantity-btn"
+                id="decreaseBtn"
+              >
+                -
+              </button>
+              <input
+                type="number"
+                class="book-modal-quantity-input"
+                id="quantity"
+                value="1"
+                min="1"
+              />
+              <button
+                type="button"
+                class="book-modal-quantity-btn"
+                id="increaseBtn"
+              >
+                +
+              </button>
+            </div>
+
+            <button
+              type="button"
+              class="book-modal-add-to-cart"
+              id="addToCartBtn"
+            >
+              Add To Cart
+            </button>
+            <button type="button" class="book-modal-buy-now" id="buyNowBtn">
+              Buy Now
+            </button>
+          </form>
+
+          <div class="book-modal-accordion">
+            <div class="book-modal-accordion-item">
+              <button class="book-modal-accordion-header" data-target="details">
+                Details
+                <svg
+                  class="book-modal-chevron-icon book-modal-chevron-down"
+                  width="24"
+                  height="24"
+                >
+                  <use href="/readly/assets/sprite-zwOSE8UW.svg#icon-chevron-down"></use>
+                </svg>
+                <svg
+                  class="book-modal-chevron-icon book-modal-chevron-up"
+                  width="24"
+                  height="24"
+                >
+                  <use href="/readly/assets/sprite-zwOSE8UW.svg#icon-chevron-up"></use>
+                </svg>
+              </button>
+              <div class="book-modal-accordion-content" id="details">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Veritatis non obcaecati, quam iure blanditiis fuga dicta
+                voluptates ab ipsum consectetur sunt a. Fuga, tempora sint illum
+                impedit pariatur aliquam perferendis.
+              </div>
+            </div>
+
+            <div class="book-modal-accordion-item">
+              <button
+                class="book-modal-accordion-header"
+                data-target="shipping"
+              >
+                Shipping
+                <svg
+                  class="book-modal-chevron-icon book-modal-chevron-down"
+                  width="24"
+                  height="24"
+                >
+                  <use href="/readly/assets/sprite-zwOSE8UW.svg#icon-chevron-down"></use>
+                </svg>
+                <svg
+                  class="book-modal-chevron-icon book-modal-chevron-up"
+                  width="24"
+                  height="24"
+                >
+                  <use href="/readly/assets/sprite-zwOSE8UW.svg#icon-chevron-up"></use>
+                </svg>
+              </button>
+              <div class="book-modal-accordion-content" id="shipping">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Laudantium dolor nostrum quas delectus tempora, omnis sequi unde
+                accusamus quae laborum quo veritatis. Voluptates odit
+                necessitatibus reprehenderit dolore. Ipsa, consectetur cum!
+              </div>
+            </div>
+
+            <div class="book-modal-accordion-item">
+              <button class="book-modal-accordion-header" data-target="returns">
+                Returns
+                <svg
+                  class="book-modal-chevron-icon book-modal-chevron-down"
+                  width="24"
+                  height="24"
+                >
+                  <use href="/readly/assets/sprite-zwOSE8UW.svg#icon-chevron-down"></use>
+                </svg>
+                <svg
+                  class="book-modal-chevron-icon book-modal-chevron-up"
+                  width="24"
+                  height="24"
+                >
+                  <use href="/readly/assets/sprite-zwOSE8UW.svg#icon-chevron-up"></use>
+                </svg>
+              </button>
+              <div class="book-modal-accordion-content" id="returns">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque
+                rerum adipisci modi delectus. Molestias vitae consectetur qui
+                labore nesciunt illo dolor a, repudiandae hic eos quibusdam iste
+                doloremque aliquid beatae?
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
