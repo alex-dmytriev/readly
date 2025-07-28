@@ -8,7 +8,7 @@
     <script type="module" crossorigin src="/readly/index.js"></script>
     <link rel="modulepreload" crossorigin href="/readly/assets/vendor-mCrKYcTL.js">
     <link rel="stylesheet" crossorigin href="/readly/assets/vendor-_qD4Mysr.css">
-    <link rel="stylesheet" crossorigin href="/readly/assets/index-DmyDinZf.css">
+    <link rel="stylesheet" crossorigin href="/readly/assets/index-BGtPeHrF.css">
   </head>
 
   <body>
@@ -278,84 +278,76 @@
   </div>
 </section>
 
-      <div class="container book-modal-container">
+      <div class="bm-container">
   <!-- Модальне вікно -->
-  <div class="book-modal-overlay" id="modalOverlay">
-    <div class="book-modal">
-      <div class="book-modal-header">
-        <button class="book-modal-close" id="closeModalBtn">
-          <svg class="icon icon-close" width="32" height="32">
-            <use href="/readly/assets/sprite-DsEbDdQi.svg#icon-x"></use>
+  <div class="bm-overlay" id="modalOverlay">
+    <div class="bm-window">
+      <div class="bm-header">
+        <button class="bm-close" id="closeModalBtn">
+          <svg class="bm-icon bm-icon-close" width="32" height="32">
+            <use href="/readly/assets/sprite-DsEbDdQi.svg#icon-close"></use>
           </svg>
         </button>
       </div>
-      <div class="book-modal-content">
-        <div class="book-modal-image-column">
-          <img class="book-modal-cover" src="" alt="" id="" />
+      <div class="bm-content">
+        <div class="bm-image-column">
+          <img class="bm-cover" src="" alt="" id="" />
         </div>
 
-        <div class="book-modal-details">
-          <h2 class="book-modal-title" id="bookTitle">I will find you</h2>
-          <p class="book-modal-author" id="bookAuthor">Harlan Coben</p>
-          <p class="book-modal-price" id="bookPrice">$15</p>
+        <div class="bm-details">
+          <h2 class="bm-title" id="bookTitle">I will find you</h2>
+          <p class="bm-author" id="bookAuthor">Harlan Coben</p>
+          <p class="bm-price" id="bookPrice">$15</p>
 
-          <form class="book-modal-form" id="bookForm">
-            <div class="book-modal-quantity-container">
-              <button
-                type="button"
-                class="book-modal-quantity-btn"
-                id="decreaseBtn"
-              >
-                -
+          <form class="bm-form" id="bookForm">
+            <div class="bm-quantity-container">
+              <button type="button" class="bm-quantity-btn" id="decreaseBtn">
+                <svg class="bm-icon bm-icon-minus" width="20" height="20">
+                  <use href="/readly/assets/sprite-DsEbDdQi.svg#icon-minus"></use>
+                </svg>
               </button>
               <input
                 type="number"
-                class="book-modal-quantity-input"
+                class="bm-quantity-input"
                 id="quantity"
                 value="1"
                 min="1"
               />
-              <button
-                type="button"
-                class="book-modal-quantity-btn"
-                id="increaseBtn"
-              >
-                +
+              <button type="button" class="bm-quantity-btn" id="increaseBtn">
+                <svg class="bm-icon bm-icon-plus" width="20" height="20">
+                  <use href="/readly/assets/sprite-DsEbDdQi.svg#icon-plus"></use>
+                </svg>
               </button>
             </div>
 
-            <button
-              type="button"
-              class="book-modal-add-to-cart"
-              id="addToCartBtn"
-            >
+            <button type="button" class="bm-add-to-cart" id="addToCartBtn">
               Add To Cart
             </button>
-            <button type="button" class="book-modal-buy-now" id="buyNowBtn">
+            <button type="button" class="bm-buy-now" id="buyNowBtn">
               Buy Now
             </button>
           </form>
 
-          <div class="book-modal-accordion">
-            <div class="book-modal-accordion-item">
-              <button class="book-modal-accordion-header" data-target="details">
+          <div class="bm-accordion">
+            <div class="bm-accordion-item">
+              <button class="bm-accordion-header" data-target="details">
                 Details
                 <svg
-                  class="book-modal-chevron-icon book-modal-chevron-down"
+                  class="bm-chevron-icon bm-chevron-down"
                   width="24"
                   height="24"
                 >
                   <use href="/readly/assets/sprite-DsEbDdQi.svg#icon-chevron-down"></use>
                 </svg>
                 <svg
-                  class="book-modal-chevron-icon book-modal-chevron-up"
+                  class="bm-chevron-icon bm-chevron-up"
                   width="24"
                   height="24"
                 >
                   <use href="/readly/assets/sprite-DsEbDdQi.svg#icon-chevron-up"></use>
                 </svg>
               </button>
-              <div class="book-modal-accordion-content" id="details">
+              <div class="bm-accordion-content" id="details">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Veritatis non obcaecati, quam iure blanditiis fuga dicta
                 voluptates ab ipsum consectetur sunt a. Fuga, tempora sint illum
@@ -363,28 +355,25 @@
               </div>
             </div>
 
-            <div class="book-modal-accordion-item">
-              <button
-                class="book-modal-accordion-header"
-                data-target="shipping"
-              >
+            <div class="bm-accordion-item">
+              <button class="bm-accordion-header" data-target="shipping">
                 Shipping
                 <svg
-                  class="book-modal-chevron-icon book-modal-chevron-down"
+                  class="bm-chevron-icon bm-chevron-down"
                   width="24"
                   height="24"
                 >
                   <use href="/readly/assets/sprite-DsEbDdQi.svg#icon-chevron-down"></use>
                 </svg>
                 <svg
-                  class="book-modal-chevron-icon book-modal-chevron-up"
+                  class="bm-chevron-icon bm-chevron-up"
                   width="24"
                   height="24"
                 >
                   <use href="/readly/assets/sprite-DsEbDdQi.svg#icon-chevron-up"></use>
                 </svg>
               </button>
-              <div class="book-modal-accordion-content" id="shipping">
+              <div class="bm-accordion-content" id="shipping">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Laudantium dolor nostrum quas delectus tempora, omnis sequi unde
                 accusamus quae laborum quo veritatis. Voluptates odit
@@ -392,25 +381,25 @@
               </div>
             </div>
 
-            <div class="book-modal-accordion-item">
-              <button class="book-modal-accordion-header" data-target="returns">
+            <div class="bm-accordion-item">
+              <button class="bm-accordion-header" data-target="returns">
                 Returns
                 <svg
-                  class="book-modal-chevron-icon book-modal-chevron-down"
+                  class="bm-chevron-icon bm-chevron-down"
                   width="24"
                   height="24"
                 >
                   <use href="/readly/assets/sprite-DsEbDdQi.svg#icon-chevron-down"></use>
                 </svg>
                 <svg
-                  class="book-modal-chevron-icon book-modal-chevron-up"
+                  class="bm-chevron-icon bm-chevron-up"
                   width="24"
                   height="24"
                 >
                   <use href="/readly/assets/sprite-DsEbDdQi.svg#icon-chevron-up"></use>
                 </svg>
               </button>
-              <div class="book-modal-accordion-content" id="returns">
+              <div class="bm-accordion-content" id="returns">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque
                 rerum adipisci modi delectus. Molestias vitae consectetur qui
                 labore nesciunt illo dolor a, repudiandae hic eos quibusdam iste
