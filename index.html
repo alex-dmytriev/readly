@@ -8,7 +8,7 @@
     <script type="module" crossorigin src="/readly/index.js"></script>
     <link rel="modulepreload" crossorigin href="/readly/assets/vendor-mCrKYcTL.js">
     <link rel="stylesheet" crossorigin href="/readly/assets/vendor-_qD4Mysr.css">
-    <link rel="stylesheet" crossorigin href="/readly/assets/index-D_PiVRTV.css">
+    <link rel="stylesheet" crossorigin href="/readly/assets/index-VUh7Wga6.css">
   </head>
 
   <body>
@@ -220,7 +220,7 @@
     </div>
   </div>
 </section>
-      <section class="books-section">
+      <section class="books-section" id="books-section">
   <div class="container books-container">
     <h2 class="visually-hidden">Trending books</h2>
     <div class="books-nav">
@@ -270,10 +270,14 @@
     </div>
     <div class="books-gallery">
       <ul class="books-gallery-list"></ul>
-      <button class="books-gallery-btn" type="button">Show More</button>
+      <button class="books-gallery-btn is-hidden" type="button">
+        Show More
+      </button>
+      <span class="loader is-hidden"></span>
     </div>
   </div>
 </section>
+
       <div class="container book-modal-container">
   <!-- Модальне вікно -->
   <div class="book-modal-overlay" id="modalOverlay">
