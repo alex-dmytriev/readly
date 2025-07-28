@@ -8,7 +8,7 @@
     <script type="module" crossorigin src="/readly/index.js"></script>
     <link rel="modulepreload" crossorigin href="/readly/assets/vendor-mCrKYcTL.js">
     <link rel="stylesheet" crossorigin href="/readly/assets/vendor-_qD4Mysr.css">
-    <link rel="stylesheet" crossorigin href="/readly/assets/index-BGtPeHrF.css">
+    <link rel="stylesheet" crossorigin href="/readly/assets/index-DFN77Mi2.css">
   </head>
 
   <body>
@@ -495,7 +495,7 @@
   </div>
 </section>
 
-      <section class="location" id="#location-section">
+      <section class="location" id="location-section">
   <div class="container location-container">
     <div class="location-wrapper">
       <div class="location-title-wrapper">
@@ -545,7 +545,7 @@
         allowfullscreen=""
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
-        >123 Books St, Sydney NSW 2000 AU
+      >
       </iframe>
     </div>
   </div>
@@ -558,7 +558,7 @@
     <div class="footer-wrapper">
       <a class="footer-logo" href="./index.html">
         <svg class="footer-logo-svg">
-          <use href="../img/sprite1.svg#icon-logo"></use>
+          <use href="../img/sprite.svg#icon-logo"></use>
         </svg>
       </a>
       <nav class="footer-nav">
@@ -582,24 +582,37 @@
         </ul>
       </nav>
       <div class="footer-subs">
-        <p class="footer-subs-title">Join</p>
-        <form class="footer-subs-form">
-          <label class="footer-subs-label">
-            <input
-              class="footer-subs-input"
-              type="email"
-              name="footer-subscription"
-              placeholder="Enter your email"
-              pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
-              required
-            />
-          </label>
-          <button class="footer-subs-button" type="submit">Sign Up</button>
+        <form class="footer-subs-form" id="signupForm">
+          <label for="footerSubsInput" class="footer-subs-title">Join</label>
+          <input
+            class="footer-subs-input"
+            id="email"
+            type="email"
+            name="footer-subscription"
+            placeholder="Enter your email"
+            pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+            required
+          />
+          <button class="footer-subs-button" id="signupBtn" type="submit">
+            Sign Up
+          </button>
           <p class="footer-subs-text">* Required field</p>
+          <div id="customAlert" class="custom-alert">
+            <span id="alertText"></span>
+          </div>
         </form>
       </div>
     </div>
     <p class="copyrights">&copy; 2025 Booksy. All rights reserved.</p>
+
+    <!--*========= FOOTER MODAL WINDOW ===== -->
+    <div id="signupModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Thank you for signing up!</p>
+      </div>
+    </div>
+    <!--*========= /FOOTER MODAL WINDOW ===== -->
   </div>
 </section>
 
