@@ -14,8 +14,8 @@
   <body>
     <header class="header">
   <div class="container header-container">
-    <nav class="page-nav">
-      <a href="/">
+    <nav class="page-nav" aria-label="Main navigation">
+      <a href="/" aria-label="Go to homepage">
         <svg class="icon-logo" width="84" height="36">
           <use href="/readly/assets/sprite-DsEbDdQi.svg#icon-logo"></use>
         </svg>
@@ -40,7 +40,11 @@
       </ul>
     </nav>
 
-    <button class="mobile-open-menu-btn" type="button">
+    <button
+      class="mobile-open-menu-btn"
+      type="button"
+      aria-label="Open mobile menu"
+    >
       <svg class="mobile-open-menu-btn-icon" width="24" height="24">
         <use href="/readly/assets/sprite-DsEbDdQi.svg#icon-menu-alt-right"></use>
       </svg>
@@ -51,19 +55,23 @@
 <div class="mobile-menu">
   <div class="container mobile-menu-container">
     <div class="mobile-menu-logo-close-btn-container">
-      <a href="/">
+      <a href="/" aria-label="Go to homepage">
         <svg class="icon-logo" width="84" height="36">
           <use href="/readly/assets/sprite-DsEbDdQi.svg#icon-logo"></use>
         </svg>
       </a>
-      <button class="mobile-menu-close-btn" type="button">
+      <button
+        class="mobile-menu-close-btn"
+        type="button"
+        aria-label="Close mobile menu"
+      >
         <svg class="mobile-menu-close-icon" width="24" height="24">
           <use href="/readly/assets/sprite-DsEbDdQi.svg#icon-close"></use>
         </svg>
       </button>
     </div>
 
-    <nav class="mobile-menu-nav">
+    <nav class="mobile-menu-nav" aria-label="Mobile navigation">
       <ul class="mobile-page-menu">
         <li class="mobile-page-menu-item">
           <a class="mobile-page-menu-link" href="#hero-section">Home</a>
