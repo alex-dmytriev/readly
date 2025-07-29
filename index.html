@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Booksy Website</title>
     <script type="module" crossorigin src="/readly/index.js"></script>
-    <link rel="modulepreload" crossorigin href="/readly/assets/vendor-DAu3bzop.js">
+    <link rel="modulepreload" crossorigin href="/readly/assets/vendor-CNVw9SsG.js">
     <link rel="stylesheet" crossorigin href="/readly/assets/vendor-_qD4Mysr.css">
-    <link rel="stylesheet" crossorigin href="/readly/assets/index-BzQs5k-l.css">
+    <link rel="stylesheet" crossorigin href="/readly/assets/index-DyrMRVTs.css">
   </head>
 
   <body>
@@ -220,12 +220,25 @@
 
       <!-- ===========  dropdown ===========-->
       <div class="books-nav-dropdown">
-        <button class="books-dropdown-toggle">Categories</button>
-        <ul class="books-dropdown-menu is-hidden"></ul>
+        <button class="books-dropdown-toggle">
+          Categories
+          <svg class="books-dropdown-arrow" width="24" height="24">
+            <use href="/readly/assets/sprite-DsEbDdQi.svg#icon-chevron-down"></use>
+          </svg>
+        </button>
+        <ul class="books-dropdown-menu is-hidden">
+          <li class="books-dropdown-menu-item render-top-btn">
+            <a href="#">All categories</a>
+          </li>
+        </ul>
       </div>
       <!-- ===========  /dropdown ===========-->
 
-      <ul class="books-nav-category"></ul>
+      <ul class="books-nav-category">
+        <li class="books-nav-category-item render-top-btn">
+          <a href="#">All categories</a>
+        </li>
+      </ul>
     </div>
     <div class="books-gallery">
       <ul class="books-gallery-list"></ul>
