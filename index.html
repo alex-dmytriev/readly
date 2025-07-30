@@ -8,7 +8,7 @@
     <script type="module" crossorigin src="/readly/index.js"></script>
     <link rel="modulepreload" crossorigin href="/readly/assets/vendor-CNVw9SsG.js">
     <link rel="stylesheet" crossorigin href="/readly/assets/vendor-_qD4Mysr.css">
-    <link rel="stylesheet" crossorigin href="/readly/assets/index-CKlHjHSt.css">
+    <link rel="stylesheet" crossorigin href="/readly/assets/index-DOVPMI91.css">
   </head>
 
   <body>
@@ -428,15 +428,15 @@
 
 
       <section id="events-section">
-  <div class="events container">
-    <header>
+  <div class="container events-container">
+    <div>
       <p class="section-label">Events</p>
       <h2 class="events-heading">Upcoming Events at Booksy</h2>
       <p class="intro-text">
         Discover readings, workshops, and bookish gatherings — online and
         offline. Everyone's welcome.
       </p>
-    </header>
+    </div>
     <div class="event-list swiper">
       <ul class="swiper-wrapper event-wrapper">
         <li class="event-item swiper-slide">
@@ -475,6 +475,7 @@
               <img
                 src="/readly/assets/a-cozy-bookstore1x-BfBE1yRZ.jpg"
                 alt="People reading together in a cozy book club setting"
+                loading="lazy"
               />
             </picture>
             <h3 class="event-subhead">
@@ -529,6 +530,7 @@
               <img
                 src="/readly/assets/book-cover1x-Bib-zmN4.jpg"
                 alt="Group of people working on book cover designs"
+                loading="lazy"
               />
             </picture>
 
@@ -580,6 +582,7 @@
               <img
                 src="/readly/assets/childrens-story1x-SZ3fWwOm.jpg"
                 alt="Woman reading to a group of children in a bookstore"
+                loading="lazy"
               />
             </picture>
 
@@ -623,6 +626,15 @@
       </div>
     </div>
   </div>
+  <button
+    class="scroll-to-top"
+    id="scrollToTop"
+    aria-label="Прокрутити до верху"
+  >
+    <svg class="icon" width="24" height="24">
+      <use href="/readly/assets/sprite-DsEbDdQi.svg#icon-chevron-up"></use>
+    </svg>
+  </button>
 </section>
 
       <div class="contact-modal-overlay" data-contact-modal>
@@ -665,7 +677,7 @@
           id="contact-email"
           name="email"
           required
-          pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+          pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
           placeholder="Enter your email"
           autocomplete="email"
         />
