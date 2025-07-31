@@ -20,13 +20,13 @@ const feedbackData = [
     text: 'Great selection, fast delivery, and beautifully packaged books. My go-to store for weekend reads!',
     name: 'Jane Doe',
     role: 'Book Lover, Reader',
-    avatar: '/img/feedbacks/avatar-jane.jpg',
+    avatar: 'https://ui-avatars.com/api/?name=Jane+Doe&background=random',
   },
   {
     text: 'Customer service was super helpful, and my order arrived earlier than expected. Highly recommend!',
     name: 'John Smith',
     role: 'Editor, BookMag',
-    avatar: ' /img/feedbacks/avatar-john.jpg',
+    avatar: ' https://ui-avatars.com/api/?name=John+Smith&background=random',
   },
   {
     text: 'Love the curated picks and clear descriptions. Makes it easy to find my next favorite book.',
