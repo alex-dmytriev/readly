@@ -1,7 +1,117 @@
 import { refs } from './refs';
 import { getBooksById } from './api';
+import Accordion from 'accordion-js';
+
+/** FOCUS TRAP CLASS */
+class FocusTrap {
+  constructor(element) {
+    this.element = element;
+    this.focusableElements = [];
+    this.firstFocusableElement = null;
+    this.lastFocusableElement = null;
+    this.previousActiveElement = null;
+  }
+
+  // Селектор для всіх фокусованих елементів
+  getFocusableElements() {
+    const focusableSelectors = [
+      'button',
+      '[href]',
+      'input',
+      'select',
+      'textarea',
+      '[tabindex]:not([tabindex="-1"])'
+    ].join(',');
+
+    this.focusableElements = Array.from(
+      this.element.querySelectorAll(focusableSelectors)
+    ).filter(el => {
+      return !el.disabled && 
+             !el.hidden && 
+             el.offsetWidth > 0 && 
+             el.offsetHeight > 0;
+    });
+
+    this.firstFocusableElement = this.focusableElements[0];
+    this.lastFocusableElement = this.focusableElements[this.focusableElements.length - 1];
+  }
+
+  // Активувати focus trap
+  activate() {
+    // Зберігаємо поточний активний елемент
+    this.previousActiveElement = document.activeElement;
+    
+    // Оновлюємо список фокусованих елементів
+    this.getFocusableElements();
+    
+    // Фокусуємо перший елемент
+    if (this.firstFocusableElement) {
+      this.firstFocusableElement.focus();
+    }
+    
+    // Додаємо обробник подій
+    this.boundHandleKeyDown = this.handleKeyDown.bind(this);
+    document.addEventListener('keydown', this.boundHandleKeyDown);
+  }
+
+  // Деактивувати focus trap
+  deactivate() {
+    // Видаляємо обробник подій
+    if (this.boundHandleKeyDown) {
+      document.removeEventListener('keydown', this.boundHandleKeyDown);
+    }
+    
+    // Повертаємо фокус на попередній елемент
+    if (this.previousActiveElement) {
+      this.previousActiveElement.focus();
+    }
+  }
+
+  // Обробник натискання клавіш
+  handleKeyDown(event) {
+    // Перевіряємо тільки Tab
+    if (event.key !== 'Tab') return;
+
+    // Оновлюємо список елементів (на випадок динамічних змін)
+    this.getFocusableElements();
+
+    // Якщо немає фокусованих елементів
+    if (this.focusableElements.length === 0) {
+      event.preventDefault();
+      return;
+    }
+
+    // Якщо тільки один елемент
+    if (this.focusableElements.length === 1) {
+      event.preventDefault();
+      this.firstFocusableElement.focus();
+      return;
+    }
+
+    // Tab (вперед)
+    if (!event.shiftKey) {
+      if (document.activeElement === this.lastFocusableElement) {
+        event.preventDefault();
+        this.firstFocusableElement.focus();
+      }
+    } 
+    // Shift + Tab (назад)
+    else {
+      if (document.activeElement === this.firstFocusableElement) {
+        event.preventDefault();
+        this.lastFocusableElement.focus();
+      }
+    }
+  }
+}
 
 /** BOOK MODAL MODULE */
+
+// Глобальна змінна для focus trap
+let bookModalFocusTrap = null;
+
+// Глобальна змінна для accordion
+let accordionInstance = null;
 
 // Функція для відображення модального вікна з інформацією про книгу
 export async function showBookModal(bookId) {
@@ -66,7 +176,7 @@ export async function showBookModal(bookId) {
       }
     }
 
-    const detailsContent = document.getElementById('details');
+    const detailsContent = document.querySelector('.bm-accordion-container .ac-panel .ac-text');
     if (detailsContent) {
       const detailsHTML = `
         <p><strong>Author:</strong> ${book.author}</p>
@@ -77,7 +187,7 @@ export async function showBookModal(bookId) {
       detailsContent.innerHTML = detailsHTML;
     }
 
-    const shippingContent = document.getElementById('shipping');
+    const shippingContent = document.querySelector('.bm-accordion-container .ac:nth-child(2) .ac-panel .ac-text');
     if (shippingContent) {
       shippingContent.innerHTML = `
         <p>Delivery Options:</p>
@@ -90,7 +200,7 @@ export async function showBookModal(bookId) {
       `;
     }
 
-    const returnsContent = document.getElementById('returns');
+    const returnsContent = document.querySelector('.bm-accordion-container .ac:nth-child(3) .ac-panel .ac-text');
     if (returnsContent) {
       returnsContent.innerHTML = `
         <p>Return Policy:</p>
@@ -113,12 +223,39 @@ export async function showBookModal(bookId) {
     // Простіше блокування скролу (як в contact-modal)
     document.body.style.overflow = 'hidden';
     
+    // Активуємо focus trap
+    const modalWindow = document.querySelector('.bm-window');
+    if (modalWindow) {
+      bookModalFocusTrap = new FocusTrap(modalWindow);
+      // Невелика затримка для завершення анімації відкриття
+      setTimeout(() => {
+        bookModalFocusTrap.activate();
+      }, 100);
+    }
+    
+    // Ініціалізуємо accordion після відкриття модального вікна
+    setTimeout(() => {
+      initializeAccordion();
+    }, 100);
+    
   } catch (error) {
     console.error('❌ Помилка при завантаженні даних книги:', error);
   }
 }
 
 export function closeBookModal() {
+  // Деактивуємо focus trap
+  if (bookModalFocusTrap) {
+    bookModalFocusTrap.deactivate();
+    bookModalFocusTrap = null;
+  }
+  
+  // Знищуємо інстанс accordion при закритті модального вікна
+  if (accordionInstance) {
+    accordionInstance.destroy();
+    accordionInstance = null;
+  }
+  
   // Видаляємо клас is-open з overlay
   const modalOverlay = document.querySelector('.bm-overlay');
   if (modalOverlay) {
@@ -129,34 +266,27 @@ export function closeBookModal() {
   document.body.style.overflow = '';
 }
 
-// Обробники подій для accordion
-const accordionButtons = document.querySelectorAll('.bm-accordion-header');
-
-accordionButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const targetId = button.getAttribute('data-target');
-    const content = document.getElementById(targetId);
-    const isActive = content.classList.contains('active');
-    
-    if (isActive) {
-      content.style.height = content.scrollHeight + 'px';
-      content.offsetHeight;
-      content.style.height = '0';
-      content.classList.remove('active');
-      button.setAttribute('aria-expanded', 'false');
-    } else {
-      content.classList.add('active');
-      content.style.height = content.scrollHeight + 'px';
-      button.setAttribute('aria-expanded', 'true');
-      
-      content.addEventListener('transitionend', function handler() {
-        if (!content.classList.contains('active')) return;
-        content.style.height = 'auto';
-        content.removeEventListener('transitionend', handler);
-      });
-    }
+// Ініціалізація accordion-js
+function initializeAccordion() {
+  // Знищуємо попередній інстанс, якщо він існує
+  if (accordionInstance) {
+    accordionInstance.destroy();
+  }
+  
+  // Створюємо новий інстанс accordion-js зі стандартними класами
+  accordionInstance = new Accordion('.bm-accordion-container', {
+    duration: 300,
+    ariaEnabled: true,
+    collapse: true,
+    showMultiple: false,
+    onlyChildNodes: true,
+    openOnInit: [],
+    elementClass: 'ac',
+    triggerClass: 'ac-trigger',
+    panelClass: 'ac-panel',
+    activeClass: 'is-active'
   });
-});
+}
 
 // Обробники закриття модального вікна
 
@@ -247,6 +377,9 @@ if (buyNowBtn) {
 
 // Інтеграція з секцією books - автоматичне відкриття модального вікна
 window.showBookModal = showBookModal;
+
+// Експорт FocusTrap для використання в інших модалках
+export { FocusTrap };
 
 // Обробник для кнопок "Learn More"
 document.addEventListener('click', (e) => {
