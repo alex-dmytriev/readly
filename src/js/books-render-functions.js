@@ -13,7 +13,6 @@ export const createGallery = books => {
               src="${book.book_image}"
               alt="${book.description}"
               width="227"
-              height="323"
             />
           </div>
           <div class="books-gallery-card-info">

@@ -29,6 +29,7 @@ export const refs = {
   counter: document.querySelector('.books-nav-counter'),
   dropdownMenu: document.querySelector('.books-dropdown-menu'),
   dropdownToggle: document.querySelector('.books-dropdown-toggle'),
+  dropdownToggleText: document.querySelector('.books-dropdown-toggle-text'),
 
   // ========== /books
 };

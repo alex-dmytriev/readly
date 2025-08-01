@@ -50,9 +50,6 @@
   padding-right: 12px;
   width: 100%;
   height: 43px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
   border-radius: 4px;
   border: 1px solid var(--opacity-neutral-darkest-15);
   background-color: var(--opacity-neutral-darkest-5);
@@ -62,6 +59,16 @@
 .books-dropdown-toggle:hover,
 .books-dropdown-toggle:focus {
   background-color: #e5d7d0;
+}
+
+.books-dropdown-toggle-text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.books-dropdown-arrow {
+  min-width: 24px;
 }
 
 .books-dropdown-menu {
@@ -165,6 +172,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transform: scale(1.005);
   display: block;
   border-radius: 8px;
 }
